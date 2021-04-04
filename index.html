@@ -44,10 +44,9 @@
 
     <style media="screen">
 
-      .noscroll{
-        overflow: hidden!important;
+      .invisible {
+        opacity: 0;
       }
-
 
       .content {
         padding-top: 76px;
@@ -58,16 +57,18 @@
         width: 100%;
         z-index: 20;
         top: 0;
+        transition: top 0.3s;
       }
 
       .navbar.hide {
-        top: -56px;
+        /*top: -56px;*/
+        position: absolute;
         /*display: none;*/
       }
 
-      .navbar.top {
+      /*.navbar.top {
         position: absolute;
-      }
+      }*/
 
       .popup {
         z-index: 100;
@@ -308,25 +309,35 @@
 
 
         /* hide topbar */
-        var lastScrollTop = 0;
+        /*var lastScrollTop = 0;
         $(window).scroll(function(event){
           if (sidebar == false) {
             var st = $(this).scrollTop();
             if (st > lastScrollTop){
               // downscroll code
-              if (st > 56) {  // current solution to make it look good at top
-                $("#topbar").removeClass("top").addClass("hide");
-              } else {
-                $("#topbar").addClass("top");
-              }
+
+
+              $("#topbar").addClass("hide").css('top', `${st}px`);
+
+
+            //  if (st > 56) {  // current solution to make it look good at top (56)
+            //    $("#topbar").removeClass("top").addClass("invisible").addClass("hide"); //
+            //  } else if (st > 60) {  // current solution to make it look good at top (56)
+            //    $("#topbar").removeClass("top").css({ 'position':'absolute', 'top':`${}`, 'top':'', 'width':''});
+
+
+            //     //
+            //  } else {
+            //    $("#topbar").addClass("top");
+            //  }
             } else {
               // upscroll code
-              $("#topbar").removeClass("hide");
+              $("#topbar").removeClass("hide").css('top', '0');
             }
             lastScrollTop = st;
           }
 
-        });
+        });*/
 
 
         /* open sidebar */
