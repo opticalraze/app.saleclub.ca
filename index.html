@@ -7,24 +7,15 @@
 
 
     <!-- MOBILE SITE -->
-    <link rel="canonical" href="https://saleclub.ca">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
     <script type="text/javascript">
       var device;
-
-      // check if user is not on a mobile device
-      if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-        // true for not mobile device
-        //window.location.replace("https://saleclub.ca");     // redirect user to regular site
-      } else {
-
-        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {  // device is ios
-          device = 'ios';
-
-        } else if (/Android/i.test(navigator.userAgent)) {    // device is android
-          device = 'android';
-
-        }
-
+      // check type of mobile device
+      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {  // device is ios
+        device = 'ios';
+      } else if (/Android/i.test(navigator.userAgent)) {    // device is android
+        device = 'android';
       }
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
