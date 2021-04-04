@@ -310,19 +310,22 @@
         /* hide topbar */
         var lastScrollTop = 0;
         $(window).scroll(function(event){
-          var st = $(this).scrollTop();
-          if (st > lastScrollTop){
-            // downscroll code
-            if (st > 56) {  // current solution to make it look good at top
-              $("#topbar").removeClass("top").addClass("hide");
+          if (sidebar == false) {
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop){
+              // downscroll code
+              if (st > 56) {  // current solution to make it look good at top
+                $("#topbar").removeClass("top").addClass("hide");
+              } else {
+                $("#topbar").addClass("top");
+              }
             } else {
-              $("#topbar").addClass("top");
+              // upscroll code
+              $("#topbar").removeClass("hide");
             }
-          } else {
-            // upscroll code
-            $("#topbar").removeClass("hide");
+            lastScrollTop = st;
           }
-          lastScrollTop = st;
+
         });
 
 
