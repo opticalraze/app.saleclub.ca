@@ -17,6 +17,9 @@
       } else if (/Android/i.test(navigator.userAgent)) {    // device is android
         device = 'android';
       }
+      /*if (/X-Requested-With/i.test(navigator.userAgent)) {  // android app webview For Example Dolphin browser sends: "mobi.mgeek.TunnyBrowser" My test app sent: "com.jamestymann.identifyawebview"
+        console.log('android webview');
+      }*/
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 
@@ -43,6 +46,10 @@
   <body class="bg-danger">
 
     <style media="screen">
+
+    .content {
+      min-width: 100vw;
+    }
 
     .wrapper {
         display: flex;
