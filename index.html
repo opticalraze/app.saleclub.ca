@@ -44,9 +44,82 @@
 
     <style media="screen">
 
-      .invisible {
-        opacity: 0;
-      }
+    .wrapper {
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    #sidebar a {
+      color: rgba(255,255,255,.5);
+    }
+
+    #sidebar a:hover {
+      color: rgba(255,255,255,.75);
+      text-decoration: none;
+    }
+
+
+    #sidebar ul {
+      padding: 16px;
+    }
+
+    #sidebar li {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    #sidebar li.active a {
+      color: #fff;
+    }
+
+    #sidebar ul {
+      position: fixed;
+      top: 56px;
+    }
+
+    #sidebar {
+        min-width: 250px;
+        max-width: 250px;
+        min-height: 100vh;
+    }
+
+    #sidebar.active {
+        margin-left: -250px;
+    }
+
+  /*  a[data-toggle="collapse"] {
+    position: relative;
+}*/
+
+/*.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}*/
+
+.dropdown-toggle::after {
+    display: inline-block;
+    /*margin-left: .255em;*/
+    margin-left: .510em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
 
       .content {
         padding-top: 76px;
@@ -159,6 +232,8 @@
 
     </style>
 
+    <div class="wrapper">
+
     <div class="splash" style="background-color:white;height:100vh;width:100vw;overflow:hidden;position:fixed;top:0;left:0;z-index:1000;">
       <img src="assets/logo.svg" alt="logo" class="animate__animated animate__jackInTheBox" id="splash" style="width:100vmin;padding:20px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;">
     </div>
@@ -167,7 +242,7 @@
       <a class="navbar-brand" href="/">
         <img src="assets/logo-white.svg" alt="SaleClub.ca">
       </a>
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" id="open-sidebar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" id="sidebarCollapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar top-bar"></span>
         <span class="icon-bar middle-bar"></span>
@@ -176,29 +251,48 @@
     </nav>
 
 
-    <div class="sidebar hidden">
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Categories
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="categories-dropdown">
+    <nav id="sidebar">
 
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" id="show-about-popup">About</a>
-          </li>
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="#">Home 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
         </ul>
-      </div>
-    </div>
+    </nav>
 
 
     <div class="content">
@@ -239,6 +333,8 @@
 
 
 
+
+    </div>
 
     </div>
 
@@ -341,10 +437,13 @@
 
 
         /* open sidebar */
-        $("#open-sidebar").click(function() {
+        $("#sidebarCollapse").click(function() {
+          //$('#sidebar').toggleClass('active');
           if (sidebar == true) {
             sidebar = false;
-            $("#open-sidebar").addClass("collapsed");
+            $("#sidebarCollapse").addClass("collapsed");
+            $('#sidebar').removeClass('active');
+
 
             // enable scrolling
 
@@ -353,7 +452,9 @@
 
           } else {
             sidebar = true;
-            $("#open-sidebar").removeClass("collapsed");
+            $("#sidebarCollapse").removeClass("collapsed");
+            $('#sidebar').addClass('active');
+
 
             // disable scrolling
             scrollPosition = $(window).scrollTop();
