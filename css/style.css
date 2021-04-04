@@ -1,6 +1,6 @@
 /* standard styles */
 body {
-  overflow: hidden;
+  overflow-y: hidden;
   overflow-x: hidden!important;
 }
 .hidden {

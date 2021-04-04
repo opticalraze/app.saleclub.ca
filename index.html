@@ -300,7 +300,11 @@
     <script type="text/javascript" src="scripts/main.js?v=1"></script>
 
     <script type="text/javascript">
+
       $(document).ready(function() {
+
+        let sidebar = false;
+        let scrollPosition = 0;
 
 
         /* hide topbar */
@@ -324,8 +328,27 @@
 
         /* open sidebar */
         $("#open-sidebar").click(function() {
-          $(this).toggleClass("collapsed");
-          $("body").toggleClass("noscroll");
+          if (sidebar == true) {
+            sidebar = false;
+            $("#open-sidebar").addClass("collapsed");
+
+            // enable scrolling
+
+            $("body").css({ 'overflow-y':'scroll', 'position':'', 'top':'', 'width':''});
+            $(window).scrollTop(scrollPosition);
+
+          } else {
+            sidebar = true;
+            $("#open-sidebar").removeClass("collapsed");
+
+            // disable scrolling
+            scrollPosition = $(window).scrollTop();
+            $("body").css({ 'overflow-y':'hidden', 'position':'fixed', 'top':`-${scrollPosition}px`, 'width':'100%'});
+
+
+          }
+
+
         });
 
       });
