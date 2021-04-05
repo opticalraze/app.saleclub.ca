@@ -219,7 +219,7 @@ $(document).ready(function() {
 
         // adjusting text sizes
         jQuery("H1").fitText();
-        
+
 
         /* handle splash */
         const splash = document.querySelector('#splash');
@@ -260,7 +260,7 @@ function secondsToDhms(seconds) {
           waitForElementToDisplay("#splash.done",function(){
             //console.log('u');
             $(".splash").fadeOut("slow");
-            $('body').css('overflow','auto');
+            $('body').css('overflow','auto').addClass("bg-danger").removeClass("bg-white");
           },200,10000);
         }
     });
