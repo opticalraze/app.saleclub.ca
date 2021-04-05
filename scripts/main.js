@@ -260,7 +260,9 @@ function secondsToDhms(seconds) {
           waitForElementToDisplay("#splash.done",function(){
             //console.log('u');
             $(".splash").fadeOut("slow");
-            $('body').css('overflow','auto').addClass("bg-danger").removeClass("bg-white");
+            $('body').css('overflow','auto');
+            //$('body').css('overflow','auto').addClass("bg-danger").removeClass("bg-white");
+            //$('#topbar').css('z-index','2000');
           },200,10000);
         }
     });
