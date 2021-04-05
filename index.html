@@ -483,6 +483,11 @@
             margin-top: 50px;
           }
 
+          .noscroll {
+            position: fixed;
+            overflow: hidden!important;
+          }
+
     </style>
 
 
@@ -522,8 +527,8 @@
 
         if (!isApp) {
           $("#install-popup").removeClass("hidden");
-          $(".splash").addClass("hidden");
-          $("body").css(["position":"fixed","overflow-y":"hidden"]); // prevent scroll glitch on mobile
+          //$(".splash").addClass("hidden");
+          $("body").addClass("noscroll");//(["position":"fixed"],["overflow-y":"hidden"]); // prevent scroll glitch on mobile
 
         }
 
