@@ -456,6 +456,48 @@
       </span>
     </div>
 
+
+    <style media="screen">
+
+          #install-popup {
+            /*width: 100%;
+            height: 100%;*/
+            display: table;
+            text-align: center;
+          }
+
+
+          #install-popup .inner {
+            display: table-cell;
+            vertical-align: middle;
+          }
+
+          #install-popup .icon {
+            max-width: 300px;
+            margin: 20px;
+            filter: drop-shadow(1px 1px 6px rgba(0,0,0,0.5));
+          }
+
+          #install-popup button {
+            margin-top: 50px;
+          }
+
+    </style>
+
+
+    <div id="install-popup" class="popup hidden">
+      <div class="inner">
+        <img src="assets/icon.svg" alt="icon" class="icon">
+        <h1>SaleClub</h1>
+        <button type="button" name="button" class="btn btn-lg btn-danger">Install</button>
+      </div>
+      <span>
+          <a href="https://m.saleclub.ca" class="btn btn-light popup-close"><i class="fas fa-times"></i></a>
+      </span>
+    </div>
+
+
+
     <!-- bootsrap -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -466,11 +508,24 @@
 
     <!-- Scripts -->
     <script type="text/javascript" src="scripts/jquery.fittext.js"></script>
+    <script type="text/javascript" src="scripts/jquery.getUrlParam.js"></script>
     <script type="text/javascript" src="scripts/main.js?v=3"></script>
 
     <script type="text/javascript">
 
       $(document).ready(function() {
+
+
+        const isApp = $(document).getUrlParam("app");
+        console.log('isApp: ' + isApp);
+
+        if (!isApp) {
+          $("#install-popup").removeClass("hidden");
+        }
+
+
+
+
 
         let sidebar = false;
         let scrollPosition = 0;
@@ -543,7 +598,7 @@
 
 
     <!-- SERVICE WORKER -->
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
       if('serviceWorker' in navigator) {
         //navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
         navigator.serviceWorker.register('service-worker.js', { scope: '/' })
@@ -556,7 +611,7 @@
         });
       }
 
-    </script>
+    </script>-->
 
   </body>
 </html>

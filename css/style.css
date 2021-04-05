@@ -4,7 +4,7 @@ body {
   overflow-x: hidden!important;
 }
 .hidden {
-  display: none;
+  display: none!important;
 }
 .content {
   background-color: white;
