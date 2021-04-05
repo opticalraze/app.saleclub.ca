@@ -464,6 +464,7 @@
             height: 100%;*/
             display: table;
             text-align: center;
+            z-index: 1010;
           }
 
 
@@ -522,6 +523,8 @@
         if (!isApp) {
           $("#install-popup").removeClass("hidden");
           $(".splash").addClass("hidden");
+          $("body").css(["position":"fixed","overflow-y":"hidden"]); // prevent scroll glitch on mobile
+
         }
 
 
