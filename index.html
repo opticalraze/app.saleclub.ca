@@ -495,7 +495,7 @@
       <div class="inner">
         <img src="assets/icon.svg" alt="icon" class="icon">
         <h1>SaleClub</h1>
-        <button type="button" name="button" class="btn btn-lg btn-danger">Install</button>
+        <button type="button" name="button" class="btn btn-lg btn-danger" id="install">Install</button>
       </div>
       <span>
           <a href="https://m.saleclub.ca" class="btn btn-light popup-close"><i class="fas fa-times"></i></a>
@@ -526,11 +526,25 @@
         console.log('isApp: ' + isApp);
 
         if (!isApp) {
+          $("#splash").addClass("hidden");
           $("#install-popup").removeClass("hidden");
           //$(".splash").addClass("hidden");
           $("body").addClass("noscroll");//(["position":"fixed"],["overflow-y":"hidden"]); // prevent scroll glitch on mobile
 
         }
+
+
+
+
+        $("#install").click(function() {
+
+          if (device == 'ios') {
+            $("#install-popup img").css("margin","0").attr("src","assets/install/ios.gif");
+            $("#install-popup h1").remove();
+            $("#install-popup button").remove();
+          }
+
+        });
 
 
 
