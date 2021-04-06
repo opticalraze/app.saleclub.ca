@@ -71,6 +71,18 @@
       "purpose": "maskable"
     }
   ],
+  "screenshots": [
+    {
+      "src": "/images/screenshots/1-360x640.png",
+      "type": "image/png",
+      "sizes": "1080x1920"
+    },
+    {
+      "src": "/images/screenshots/2-360x640.png",
+      "type": "image/png",
+      "sizes": "360x640"
+    }
+  ],
   "start_url": "/?homescreen=1",
   "scope": "/",
   "display": "standalone",
