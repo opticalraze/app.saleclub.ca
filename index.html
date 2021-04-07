@@ -527,7 +527,7 @@
         $("#install").click(function() {
 
           if (device == 'ios') {
-            $("#install-popup img").css("margin","0").attr("src","assets/install/ios.gif");
+            $("#install-popup img").css(["margin":"0"],["width":"100%!important"]).attr("src","assets/install/ios.gif");
             $("#install-popup h1").remove();
             $("#install-popup button").remove();
           }
