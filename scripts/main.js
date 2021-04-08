@@ -141,7 +141,8 @@ $(document).ready(function() {
       else{
         $(this).hide();
 
-        $('body').addClass('bg-danger').removeClass('bg-light');
+        $('body').addClass('bg-danger').removeClass('bg-white');
+        $('#statusbar').addClass('bg-danger').removeClass('bg-white');
         $('body').css('overflow', 'auto');    // enable scrolling
         $('body').css('position', 'unset');   // enable scrolling
       }
@@ -149,14 +150,16 @@ $(document).ready(function() {
     $("#show-about-popup").on("click", function() {
       $("#about-popup").show();
 
-      $('body').addClass('bg-light').removeClass('bg-danger');
+      $('body').addClass('bg-white').removeClass('bg-danger');
+      $('#statusbar').addClass('bg-white').removeClass('bg-danger');
       $('body').css('overflow', 'hidden');  // disable scrolling
       $('body').css('position', 'fixed');   // disable scrolling
     });
     $("#close-about-popup").on('click', function(e){
       $('#about-popup').fadeOut(200);
 
-      $('body').addClass('bg-danger').removeClass('bg-light');
+      $('body').addClass('bg-danger').removeClass('bg-white');
+      $('#statusbar').addClass('bg-danger').removeClass('bg-white');
       $('body').css('overflow', 'auto');    // enable scrolling
       $('body').css('position', 'unset');   // enable scrolling
     });
@@ -169,7 +172,8 @@ $(document).ready(function() {
         else{
           $(this).hide();
 
-          $('body').addClass('bg-danger').removeClass('bg-light');
+          $('body').addClass('bg-danger').removeClass('bg-white');
+          $('#statusbar').addClass('bg-danger').removeClass('bg-white');
           $('body').css('overflow', 'auto');    // enable scrolling
           $('body').css('position', 'unset');   // enable scrolling
         }
@@ -177,14 +181,16 @@ $(document).ready(function() {
       $("#show-notice-popup").on("click", function() {
         $("#notice-popup").show();
 
-        $('body').addClass('bg-light').removeClass('bg-danger');
+        $('body').addClass('bg-white').removeClass('bg-danger');
+        $('#statusbar').addClass('bg-white').removeClass('bg-danger');
         $('body').css('overflow', 'hidden');  // disable scrolling
         $('body').css('position', 'fixed');   // disable scrolling
       });
       $("#close-notice-popup").on('click', function(e){
         $('#notice-popup').fadeOut(200);
 
-        $('body').addClass('bg-danger').removeClass('bg-light');
+        $('body').addClass('bg-danger').removeClass('bg-white');
+        $('#statusbar').addClass('bg-danger').removeClass('bg-white');
         $('body').css('overflow', 'auto');    // enable scrolling
         $('body').css('position', 'unset');   // enable scrolling
       });
@@ -198,7 +204,8 @@ $(document).ready(function() {
           else{
             $(this).hide();
 
-            $('body').addClass('bg-danger').removeClass('bg-light');
+            $('body').addClass('bg-danger').removeClass('bg-white');
+            $('#statusbar').addClass('bg-danger').removeClass('bg-white');
             $('body').css('overflow', 'auto');    // enable scrolling
             $('body').css('position', 'unset');   // enable scrolling
           }
@@ -206,14 +213,16 @@ $(document).ready(function() {
         $("#show-contact-popup").on("click", function() {
           $("#contact-popup").show();
 
-          $('body').addClass('bg-light').removeClass('bg-danger');
+          $('body').addClass('bg-white').removeClass('bg-danger');
+          $('#statusbar').addClass('bg-white').removeClass('bg-danger');
           $('body').css('overflow', 'hidden');  // disable scrolling
           $('body').css('position', 'fixed');   // disable scrolling
         });
         $("#close-contact-popup").on('click', function(e){
           $('#contact-popup').fadeOut(200);
 
-          $('body').addClass('bg-danger').removeClass('bg-light');
+          $('body').addClass('bg-danger').removeClass('bg-white');
+          $('#statusbar').addClass('bg-danger').removeClass('bg-white');
           $('body').css('overflow', 'auto');    // enable scrolling
           $('body').css('position', 'unset');   // enable scrolling
         });
