@@ -53,7 +53,8 @@ $(document).ready(function() {
         category = key; // still need to check if category still exists in case if it would disapear but may just add a no sales available notice
       }
 
-      $("#categories-dropdown").append(`<a class="dropdown-item capitalize change-category" href="#categories" data-value="${key}">${key}</a>`);
+      $("#categories-dropdown").append(`<li><a href="#categories" class="dropdown-item capitalize change-category" data-value="${key}">${key}</a></li>`);
+
       if (category == key){
 
         $("#categories select").append(`<option selected value="${key}">${key}</option>`);
@@ -113,6 +114,14 @@ $(document).ready(function() {
   });
 
   $(document).on('click', '.change-category', function(){
+
+    $("body").css({ 'overflow-y':'scroll', 'position':'', 'top':'', 'width':''});
+    $(window).scrollTop(scrollPosition);
+    sidebar = false;
+    $("#sidebarCollapse").addClass("collapsed");
+    $('#sidebar').removeClass('active');
+    $('.content').removeClass('darken');
+
     category = $(this).data("value");
     Cookies.set('category', category, { expires: 30 }); // set category cookie
     $("#categories select").val(category);  // change category in the selection
@@ -214,7 +223,6 @@ $(document).ready(function() {
         $('body').css('overflow', 'auto');    // enable scrolling
         $('body').css('position', 'unset');   // enable scrolling
       });
-
 
 
       // contact popup
