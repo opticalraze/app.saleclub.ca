@@ -141,6 +141,7 @@ $(document).ready(function() {
       else{
         $(this).hide();
 
+        $('#statusbar').addClass('bg-danger').removeClass('bg-white');
         $('body').css('overflow', 'auto');    // enable scrolling
         $('body').css('position', 'unset');   // enable scrolling
         //$('body').addClass('bg-danger').removeClass('bg-light');
@@ -149,6 +150,7 @@ $(document).ready(function() {
     $("#show-about-popup").on("click", function() {
       $("#about-popup").show();
 
+      $('#statusbar').addClass('bg-white').removeClass('bg-danger');
       $('body').css('overflow', 'hidden');  // disable scrolling
       $('body').css('position', 'fixed');   // disable scrolling
       //$('body').addClass('bg-light').removeClass('bg-danger');
@@ -156,6 +158,7 @@ $(document).ready(function() {
     $("#close-about-popup").on('click', function(e){
       $('#about-popup').fadeOut(200);
 
+      $('#statusbar').addClass('bg-danger').removeClass('bg-white');
       $('body').css('overflow', 'auto');    // enable scrolling
       $('body').css('position', 'unset');   // enable scrolling
       //$('body').addClass('bg-danger').removeClass('bg-light');
@@ -169,6 +172,7 @@ $(document).ready(function() {
         else{
           $(this).hide();
 
+          $('#statusbar').addClass('bg-danger').removeClass('bg-white');
           $('body').css('overflow', 'auto');    // enable scrolling
           $('body').css('position', 'unset');   // enable scrolling
           //$('body').addClass('bg-danger').removeClass('bg-light');
@@ -177,6 +181,7 @@ $(document).ready(function() {
       $("#show-notice-popup").on("click", function() {
         $("#notice-popup").show();
 
+        $('#statusbar').addClass('bg-white').removeClass('bg-danger');
         $('body').css('overflow', 'hidden');  // disable scrolling
         $('body').css('position', 'fixed');   // disable scrolling
         //$('body').addClass('bg-light').removeClass('bg-danger');
@@ -184,6 +189,7 @@ $(document).ready(function() {
       $("#close-notice-popup").on('click', function(e){
         $('#notice-popup').fadeOut(200);
 
+        $('#statusbar').addClass('bg-danger').removeClass('bg-white');
         $('body').css('overflow', 'auto');    // enable scrolling
         $('body').css('position', 'unset');   // enable scrolling
         //$('body').addClass('bg-danger').removeClass('bg-light');
@@ -198,6 +204,7 @@ $(document).ready(function() {
           else{
             $(this).hide();
 
+            $('#statusbar').addClass('bg-danger').removeClass('bg-white');
             $('body').css('overflow', 'auto');    // enable scrolling
             $('body').css('position', 'unset');   // enable scrolling
           }
@@ -205,12 +212,14 @@ $(document).ready(function() {
         $("#show-contact-popup").on("click", function() {
           $("#contact-popup").show();
 
+          $('#statusbar').addClass('bg-white').removeClass('bg-danger');
           $('body').css('overflow', 'hidden');  // disable scrolling
           $('body').css('position', 'fixed');   // disable scrolling
         });
         $("#close-contact-popup").on('click', function(e){
           $('#contact-popup').fadeOut(200);
 
+          $('#statusbar').addClass('bg-danger').removeClass('bg-white');
           $('body').css('overflow', 'auto');    // enable scrolling
           $('body').css('position', 'unset');   // enable scrolling
         });

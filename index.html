@@ -191,6 +191,13 @@
         border-bottom: 5px solid #dc3545;
       }
 
+      .popup {
+        z-index: 100;
+      }
+
+
+
+      /* navbar */
       .navbar {
         position: fixed;
         width: 100%;
@@ -209,33 +216,23 @@
         position: absolute;
       }*/
 
-      .popup {
-        z-index: 100;
-      }
-
+      /* sidebar toggle */
       .navbar {
         height: 56px;
       }
-
       .navbar-toggle {
-
         position: absolute;
         right: 16px;
-
       }
-
-
       /* turn hamburger into times */
       .navbar-dark .navbar-toggle .icon-bar {
         /*background-color: rgba(255,255,255,.5);*/
         background-color: #F59AA3;
       }
-
       .navbar-dark .navbar-toggle {
         color: rgba(255,255,255,.5);
         border-color: rgba(255,255,255,.1);
       }
-
       .navbar-toggle {
         font-size: 1.25rem;
         line-height: 1;
@@ -243,13 +240,11 @@
         border: 1px solid transparent;
         border-radius: .25rem;
       }
-
       .navbar-toggle {
         padding-top: 12px;
         padding-bottom: 12px;
         padding-left: 15px;
         padding-right: 15px;
-
         /*border: none;*/
         background: transparent !important;
       }
@@ -284,25 +279,20 @@
       .navbar-toggle.collapsed .bottom-bar {
         transform: rotate(0);
       }
-
       .navbar-toggle .icon-bar{
         display:block;
         width:22px;
         height:2px;
         border-radius:1px
       }
-
       .navbar-toggle .icon-bar+.icon-bar{
         margin-top:4px
       }
 
 
 
-
-
-
-
-      .statusbar {
+      /* status bar fix for ios */
+      #statusbar {
         position:fixed;
         height:80px;
         width:100vw;
@@ -314,12 +304,12 @@
 
     </style>
 
-    <div class="statusbar bg-danger"></div>
+    <div id="statusbar" class="bg-danger"></div>
 
     <div class="wrapper">
 
     <div class="splash" style="background-color:white;height:100vh;width:100vw;overflow:hidden;position:fixed;top:0;left:0;z-index:1000;">
-      <div class="statusbar bg-white" style="z-index:600;"></div>
+      <!--<div class="statusbar bg-white" style="z-index:600;"></div>-->
       <img src="assets/logo.svg" alt="logo" class="animate__animated animate__jackInTheBox" id="splash" style="width:100vmin;padding:20px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;">
     </div>
 
