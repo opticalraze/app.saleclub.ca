@@ -476,6 +476,12 @@
             overflow: hidden!important;
           }
 
+          .demo {
+            margin: 0;
+            width: 100%;
+            padding: 20px;
+          }
+
     </style>
 
 
@@ -527,7 +533,8 @@
         $("#install").click(function() {
 
           if (device == 'ios') {
-            $("#install-popup img").css(["margin":"0"],["width":"100%!important"]).attr("src","assets/install/ios.gif");
+            $("#install-popup img").removeClass("icon").addClass("demo");
+            $("#install-popup img").attr("src","assets/install/ios.gif");
             $("#install-popup h1").remove();
             $("#install-popup button").remove();
           }
