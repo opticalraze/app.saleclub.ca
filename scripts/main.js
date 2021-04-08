@@ -11,6 +11,12 @@ $(document).ready(function() {
   var categories;
   var category = Cookies.get('category');
 
+  // app stuff
+  let sidebar = false;
+  let scrollPosition = 0;
+
+
+
   $.get('https://saleclub.ca/data/sales.json'+nocache, function(d) {
     //data = JSON.parse(d); works on localhost
 
@@ -143,8 +149,12 @@ $(document).ready(function() {
 
         //$('body').addClass('bg-danger').removeClass('bg-white');
         //$('#statusbar').addClass('bg-danger').removeClass('bg-white');
-        $('body').css('overflow', 'auto');    // enable scrolling
-        $('body').css('position', 'unset');   // enable scrolling
+        //$('body').css('overflow', 'auto');    // enable scrolling
+        //$('body').css('position', 'unset');   // enable scrolling
+
+        // enable scrolling
+        $("body").css({ 'overflow-y':'scroll', 'position':'', 'top':'', 'width':''});
+        $(window).scrollTop(scrollPosition);
       }
     });
     $("#show-about-popup").on("click", function() {
@@ -152,16 +162,25 @@ $(document).ready(function() {
 
       //$('body').addClass('bg-white').removeClass('bg-danger');
       //$('#statusbar').addClass('bg-white').removeClass('bg-danger');
-      $('body').css('overflow', 'hidden');  // disable scrolling
-      $('body').css('position', 'fixed');   // disable scrolling
+      //$('body').css('overflow', 'hidden');  // disable scrolling
+      //$('body').css('position', 'fixed');   // disable scrolling
+
+      // hide sidebar
+      sidebar = false;
+      $("#sidebarCollapse").addClass("collapsed");
+      $('#sidebar').removeClass('active');
     });
     $("#close-about-popup").on('click', function(e){
       $('#about-popup').fadeOut(200);
 
       //$('body').addClass('bg-danger').removeClass('bg-white');
       //$('#statusbar').addClass('bg-danger').removeClass('bg-white');
-      $('body').css('overflow', 'auto');    // enable scrolling
-      $('body').css('position', 'unset');   // enable scrolling
+      //$('body').css('overflow', 'auto');    // enable scrolling
+      //$('body').css('position', 'unset');   // enable scrolling
+
+      // enable scrolling
+      $("body").css({ 'overflow-y':'scroll', 'position':'', 'top':'', 'width':''});
+      $(window).scrollTop(scrollPosition);
     });
 
 
@@ -240,6 +259,73 @@ $(document).ready(function() {
           $('#splash').removeClass('animate__jackInTheBox').addClass('done').delay(1000).queue(function(){
             $('#splash').addClass('animate__pulse animate__infinite');
           });
+
+
+        });
+
+
+
+
+        /* handle sidebar */
+
+        /* hide topbar */
+        /*var lastScrollTop = 0;
+        $(window).scroll(function(event){
+          if (sidebar == false) {
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop){
+              // downscroll code
+
+
+              $("#topbar").addClass("hide").css('top', `${st}px`);
+
+
+            //  if (st > 56) {  // current solution to make it look good at top (56)
+            //    $("#topbar").removeClass("top").addClass("invisible").addClass("hide"); //
+            //  } else if (st > 60) {  // current solution to make it look good at top (56)
+            //    $("#topbar").removeClass("top").css({ 'position':'absolute', 'top':`${}`, 'top':'', 'width':''});
+
+
+            //     //
+            //  } else {
+            //    $("#topbar").addClass("top");
+            //  }
+            } else {
+              // upscroll code
+              $("#topbar").removeClass("hide").css('top', '0');
+            }
+            lastScrollTop = st;
+          }
+
+        });*/
+
+
+        /* open sidebar */
+        $("#sidebarCollapse").click(function() {
+          //$('#sidebar').toggleClass('active');
+          if (sidebar == true) {
+            sidebar = false;
+            $("#sidebarCollapse").addClass("collapsed");
+            $('#sidebar').removeClass('active');
+
+
+            // enable scrolling
+
+            $("body").css({ 'overflow-y':'scroll', 'position':'', 'top':'', 'width':''});
+            $(window).scrollTop(scrollPosition);
+
+          } else {
+            sidebar = true;
+            $("#sidebarCollapse").removeClass("collapsed");
+            $('#sidebar').addClass('active');
+
+
+            // disable scrolling
+            scrollPosition = $(window).scrollTop();
+            $("body").css({ 'overflow-y':'hidden', 'position':'fixed', 'top':`-${scrollPosition}px`, 'width':'100%'});
+
+
+          }
 
 
         });

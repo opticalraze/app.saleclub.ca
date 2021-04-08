@@ -518,7 +518,7 @@
     <!-- Scripts -->
     <script type="text/javascript" src="scripts/jquery.fittext.js"></script>
     <script type="text/javascript" src="scripts/jquery.getUrlParam.js"></script>
-    <script type="text/javascript" src="scripts/main.js?v=6"></script>
+    <script type="text/javascript" src="scripts/main.js?v=7"></script>
 
     <script type="text/javascript">
 
@@ -547,76 +547,6 @@
             $("#install-popup h1").remove();
             $("#install-popup button").remove();
           }
-
-        });
-
-
-
-
-
-        let sidebar = false;
-        let scrollPosition = 0;
-
-
-        /* hide topbar */
-        /*var lastScrollTop = 0;
-        $(window).scroll(function(event){
-          if (sidebar == false) {
-            var st = $(this).scrollTop();
-            if (st > lastScrollTop){
-              // downscroll code
-
-
-              $("#topbar").addClass("hide").css('top', `${st}px`);
-
-
-            //  if (st > 56) {  // current solution to make it look good at top (56)
-            //    $("#topbar").removeClass("top").addClass("invisible").addClass("hide"); //
-            //  } else if (st > 60) {  // current solution to make it look good at top (56)
-            //    $("#topbar").removeClass("top").css({ 'position':'absolute', 'top':`${}`, 'top':'', 'width':''});
-
-
-            //     //
-            //  } else {
-            //    $("#topbar").addClass("top");
-            //  }
-            } else {
-              // upscroll code
-              $("#topbar").removeClass("hide").css('top', '0');
-            }
-            lastScrollTop = st;
-          }
-
-        });*/
-
-
-        /* open sidebar */
-        $("#sidebarCollapse").click(function() {
-          //$('#sidebar').toggleClass('active');
-          if (sidebar == true) {
-            sidebar = false;
-            $("#sidebarCollapse").addClass("collapsed");
-            $('#sidebar').removeClass('active');
-
-
-            // enable scrolling
-
-            $("body").css({ 'overflow-y':'scroll', 'position':'', 'top':'', 'width':''});
-            $(window).scrollTop(scrollPosition);
-
-          } else {
-            sidebar = true;
-            $("#sidebarCollapse").removeClass("collapsed");
-            $('#sidebar').addClass('active');
-
-
-            // disable scrolling
-            scrollPosition = $(window).scrollTop();
-            $("body").css({ 'overflow-y':'hidden', 'position':'fixed', 'top':`-${scrollPosition}px`, 'width':'100%'});
-
-
-          }
-
 
         });
 
