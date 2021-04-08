@@ -169,6 +169,7 @@ $(document).ready(function() {
       sidebar = false;
       $("#sidebarCollapse").addClass("collapsed");
       $('#sidebar').removeClass('active');
+      $('.content').removeClass('darken');
     });
     $("#close-about-popup").on('click', function(e){
       $('#about-popup').fadeOut(200);
@@ -307,7 +308,7 @@ $(document).ready(function() {
             sidebar = false;
             $("#sidebarCollapse").addClass("collapsed");
             $('#sidebar').removeClass('active');
-
+            $('.content').removeClass('darken');
 
             // enable scrolling
 
@@ -318,6 +319,7 @@ $(document).ready(function() {
             sidebar = true;
             $("#sidebarCollapse").removeClass("collapsed");
             $('#sidebar').addClass('active');
+            $('.content').addClass('darken');
 
 
             // disable scrolling
@@ -326,6 +328,25 @@ $(document).ready(function() {
 
 
           }
+          $(".content.darken").click(function(event) {
+
+            if (sidebar == true) {
+              sidebar = false;
+              $("#sidebarCollapse").addClass("collapsed");
+              $('#sidebar').removeClass('active');
+              $('.content').removeClass('darken');
+
+              // enable scrolling
+              $("body").css({ 'overflow-y':'scroll', 'position':'', 'top':'', 'width':''});
+              $(window).scrollTop(scrollPosition);
+
+              // prevent click through
+              return false;
+            }
+
+          });
+
+
 
 
         });
