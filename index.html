@@ -10,7 +10,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest-sc.json">
 
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#DC3545">
@@ -92,6 +92,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css?v=1">
+
+
+    <script type="text/javascript">
+      if (window.navigator.standalone) {
+        alert('pwa');
+      }
+    </script>
+
 
   </head>
   <body class="bg-danger"><!-- bg-white -->
@@ -569,6 +577,22 @@
         });
 
       });
+
+
+      /*
+      // regular safari
+      window.navigator.standalone -> false
+      window.matchMedia("(display-mode: standalone)").matches -> false
+
+      // full screen apps (only pwas, weirdly enough this doesn't apply to pre-pwa web apps on iOS)
+      window.navigator.standalone -> true
+      window.matchMedia("(display-mode: standalone)").matches -> true
+
+      // in-app browsers launched from within a PWA
+      window.navigator.standalone -> true
+      window.matchMedia("(display-mode: standalone)").matches -> false
+      */
+
     </script>
 
 
