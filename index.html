@@ -95,9 +95,29 @@
 
 
     <script type="text/javascript">
-      if (window.navigator.standalone) {
+      /*if (window.navigator.standalone) {
         alert('pwa');
+      }*/
+
+      const isApp = window.navigator.standalone;
+
+      //if (isApp) alert('is loaded as pwa');
+
+      if(!isApp) {
+        document.body.appendChild('
+        <div id="install-popup" class="popup hidden">
+          <div class="inner">
+            <img src="assets/icon.svg" alt="icon" class="icon">
+            <h1>SaleClub</h1>
+            <button type="button" name="button" class="btn btn-lg btn-danger" id="install">Install</button>
+          </div>
+          <span>
+              <a href="https://m.saleclub.ca" class="btn btn-light popup-close"><i class="fas fa-times"></i></a>
+          </span>
+        </div>');
+
       }
+
     </script>
 
 
@@ -518,7 +538,7 @@
     </style>
 
 
-    <div id="install-popup" class="popup hidden">
+    <!--<div id="install-popup" class="popup hidden">
       <div class="inner">
         <img src="assets/icon.svg" alt="icon" class="icon">
         <h1>SaleClub</h1>
@@ -527,7 +547,7 @@
       <span>
           <a href="https://m.saleclub.ca" class="btn btn-light popup-close"><i class="fas fa-times"></i></a>
       </span>
-    </div>
+    </div>-->
 
 
 
@@ -551,16 +571,16 @@
       $(document).ready(function() {
 
 
-        const isApp = $(document).getUrlParam("homescreen");
-        console.log('isApp: ' + isApp);
+        //const isApp = $(document).getUrlParam("homescreen");
+        //console.log('isApp: ' + isApp);
 
-        if (!isApp) {
+        /*if (!isApp) {
           $("#splash").addClass("hidden");
           $("#install-popup").removeClass("hidden");
           //$(".splash").addClass("hidden");
           $("body").addClass("noscroll");//(["position":"fixed"],["overflow-y":"hidden"]); // prevent scroll glitch on mobile
 
-        }
+        }*/
 
 
 
