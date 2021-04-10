@@ -94,64 +94,9 @@
     <link rel="stylesheet" href="css/style.css?v=1">
 
   </head>
-  <body class="bg-danger"><!-- bg-white -->
+  <body class="bg-white"><!-- bg-white -->
 
-    <style media="screen">
-
-      /* status bar fix for ios */
-      #statusbar {
-        position:fixed;
-        height:80px;
-        width:100vw;
-        top:-80px;
-        left:0;
-        z-index:500;
-      }
-
-      #install-popup {
-        /*width: 100%;
-        height: 100%;*/
-        display: table;
-        text-align: center;
-        z-index: 1010;
-        position: fixed;
-      }
-
-
-      #install-popup .inner {
-        display: table-cell;
-        vertical-align: middle;
-      }
-
-      #install-popup .icon {
-        max-width: 300px;
-        margin: 20px;
-        filter: drop-shadow(1px 1px 6px rgba(0,0,0,0.5));
-      }
-
-      #install-popup #install {
-        margin-top: 50px;
-        margin-bottom: 20px;
-      }
-
-      .install-button {
-        position: fixed;
-        bottom: 50px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-      }
-
-      .demo {
-        margin: 0;
-        width: 100%;
-        padding: 20px;
-      }
-
-
-    </style>
-
-    <div id="statusbar" class="bg-danger"></div>
+    <div id="statusbar" class="bg-white"></div>
 
 
     <div id="install-popup" class="popup">
@@ -183,7 +128,25 @@
 
     <script type="text/javascript">
 
+      $(document).ready(function() {
+
+        $("#install").click(function() {
+
+          if (device == 'ios') {
+            $("#install-popup img").removeClass("icon").addClass("demo");
+            $("#install-popup img").attr("src","assets/install/ios.gif");
+            $("#install-popup h1").remove();
+            $("#install-popup button").remove();
+
+            alert(navigator.userAgent);
+          }
+
+        });
+
+      });
+
     </script>
+
 
   </body>
 </html>

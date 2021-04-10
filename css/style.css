@@ -39,6 +39,58 @@ body {
 }
 
 
+/* status bar fix for ios */
+#statusbar {
+  position:fixed;
+  height:80px;
+  width:100vw;
+  top:-80px;
+  left:0;
+  z-index:500;
+}
+
+
+
+
+
+
+
+
+
+#install-popup {
+  display: table;
+  text-align: center;
+  position: fixed;
+}
+
+
+#install-popup .inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#install-popup .icon {
+  max-width: 300px;
+  margin: 20px;
+  filter: drop-shadow(1px 1px 6px rgba(0,0,0,0.5));
+}
+
+#install-popup #install {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+#install-popup .demo {
+  margin: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+
+
+
+
+
 /* content */
 #categories-dropdown {
   text-transform: capitalize;
