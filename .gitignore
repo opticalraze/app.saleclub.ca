@@ -47,3 +47,59 @@ assets/icons/._maskableicon96.png
 ._manifest.json
 assets/icons/._maskableicon114.png
 assets/icons/._maskableicon57.png
+._sw.js
+._styles-ah
+._sounds
+._scripts-ah
+._manifest-sc.json
+._images
+._ah.html
+images/._airhorn.svg
+images/._icons
+images/._touch
+images/icons/._icons-hinted.ttf
+images/icons/._icons.eot
+images/icons/._icons.svg
+images/icons/._icons.ttf
+images/icons/._icons.woff
+images/icons/._icons.woff2
+images/touch/._Airhorner-maskable.svg
+images/touch/._Airhorner.sketch
+images/touch/._android-launchericon-144-144.png
+images/touch/._android-launchericon-192-192.png
+images/touch/._android-launchericon-48-48.png
+images/touch/._android-launchericon-512-512.png
+images/touch/._android-launchericon-72-72.png
+images/touch/._android-launchericon-96-96.png
+images/touch/._android-maskableicon-144-144.png
+images/touch/._android-maskableicon-192-192.png
+images/touch/._android-maskableicon-48-48.png
+images/touch/._android-maskableicon-512-512.png
+images/touch/._android-maskableicon-72-72.png
+images/touch/._android-maskableicon-96-96.png
+scripts-ah/._comlink.es6.min.js
+scripts-ah/._comlink.global.js
+scripts-ah/._comlink.global.min.js
+scripts-ah/._main.min.js
+scripts-ah/._messagechanneladapter.global.js
+scripts-ah/._pwacompat.min.js
+sounds/._airhorn.mp3
+sounds/._MP3
+sounds/._WAV
+sounds/MP3/._Air Horn Sound Effect 02 mono.mp3
+sounds/MP3/._Air Horn Sound Effect 02.mp3
+sounds/MP3/._Air Horn Sound Effect Long mono.mp3
+sounds/MP3/._Air Horn Sound Effect Long.mp3
+sounds/MP3/._Air Horn Sound Effect mono.mp3
+sounds/MP3/._Air Horn Sound Effect Short mono.mp3
+sounds/MP3/._Air Horn Sound Effect Short.mp3
+sounds/MP3/._Air Horn Sound Effect.mp3
+sounds/WAV/._Air Horn Sound Effect 02 mono.wav
+sounds/WAV/._Air Horn Sound Effect 02.wav
+sounds/WAV/._Air Horn Sound Effect Long mono.wav
+sounds/WAV/._Air Horn Sound Effect Long.wav
+sounds/WAV/._Air Horn Sound Effect mono.wav
+sounds/WAV/._Air Horn Sound Effect Short mono.wav
+sounds/WAV/._Air Horn Sound Effect Short.wav
+sounds/WAV/._Air Horn Sound Effect.wav
+styles-ah/._main.css

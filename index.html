@@ -73,15 +73,29 @@
     <meta name="googlebot" content="noindex">
     <script type="text/javascript">
       var device;
+      const isApp = window.navigator.standalone;
       // check type of mobile device
       if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {  // device is ios
         device = 'ios';
       } else if (/Android/i.test(navigator.userAgent)) {    // device is android
         device = 'android';
       }
+
+      if(!isApp) {
+        window.location.replace('install'); // go to install page
+      }
+
       /*if (/X-Requested-With/i.test(navigator.userAgent)) {  // android app webview For Example Dolphin browser sends: "mobi.mgeek.TunnyBrowser" My test app sent: "com.jamestymann.identifyawebview"
         console.log('android webview');
       }*/
+
+      /*if (window.navigator.standalone) {
+        alert('pwa');
+      }*/
+
+      //if (isApp) alert('is loaded as pwa');
+
+
     </script>
 
     <!-- basic favicon -->
@@ -92,24 +106,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css?v=1">
-
-
-    <script type="text/javascript">
-      /*if (window.navigator.standalone) {
-        alert('pwa');
-      }*/
-
-      const isApp = window.navigator.standalone;
-
-      //if (isApp) alert('is loaded as pwa');
-
-      if(!isApp) {
-        alert('is not loaded as pwa');
-        //document.body.appendChild('<div id="install-popup" class="popup hidden" style="z-index:10000;"><div class="inner"><img src="assets/icon.svg" alt="icon" class="icon"><h1>SaleClub</h1><button type="button" name="button" class="btn btn-lg btn-danger" id="install">Install</button></div><span><a href="https://m.saleclub.ca" class="btn btn-light popup-close"><i class="fas fa-times"></i></a></span></div>');
-      }
-
-    </script>
-
 
   </head>
   <body class="bg-danger"><!-- bg-white -->
