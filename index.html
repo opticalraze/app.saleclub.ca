@@ -112,7 +112,6 @@
 
     <style media="screen">
 
-
     .content {
       min-width: 100vw;
     }
@@ -151,6 +150,11 @@
       color: #fff;
     }
 
+    #sidebar li.disabled a {
+      opacity: .5;
+      pointer-events: none;
+    }
+
     #sidebar ul {
       position: fixed;
       top: 56px;
@@ -164,6 +168,16 @@
 
     #sidebar.active {
         margin-left: -250px;
+    }
+
+    #sidebar ul ul {
+      background: rgba(0, 0, 0, 0.075);
+      position: initial;
+      margin-top: 10px;
+      margin-bottom: -8px;
+      font-size: 0.9em !important;
+      padding-top: 0px;
+      padding-bottom: 0px;
     }
 
   /*  a[data-toggle="collapse"] {
@@ -368,12 +382,12 @@
       <a href="/?homescreen=1">Home</a>
     </li>
     <li>
-      <a href="#categories-dropdown" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Categories</a>
+      <a href="#categories-dropdown" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" id="categories-dropdown-toggle">Categories</a>
       <ul class="collapse list-unstyled" id="categories-dropdown">
 
       </ul>
     </li>
-    <li>
+    <li class="disabled">
       <a href="#">Coupons</a>
     </li>
     <li>
@@ -492,7 +506,7 @@
 
     <!-- Scripts -->
     <script type="text/javascript" src="scripts/jquery.fittext.js"></script>
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/main.js?v=1"></script>
 
     <script type="text/javascript">
 

@@ -140,6 +140,9 @@ $(document).ready(function() {
     } else {
      $("#category").append(`<p class="no-sales">There are currently no ${category} sales.</p>`);
    }
+
+   $('#categories-dropdown-toggle').addClass('collapsed');  // hide categories dropdown
+   $('#categories-dropdown').removeClass('show');           // hide categories dropdown
   });
 
 
