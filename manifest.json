@@ -71,7 +71,7 @@
       "purpose": "maskable"
     }
   ],
-  "start_url": "/?homescreen=1",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",
