@@ -172,7 +172,6 @@
             background-color: transparent;
             width: 100%;
             /*padding-bottom: 100%;*/
-
             /*padding-bottom: calc(100% + 106px);*/
             border: 1px solid #f1f1f1;
             perspective: 1000px; /* Remove this if you don't want the 3D effect */
@@ -183,6 +182,7 @@
             position: relative;
             width: 100%;
             padding-bottom: 100%;
+            height: 100%;
             /*height: 100%;*/
             text-align: center;
             transition: transform 0.8s;
@@ -190,7 +190,7 @@
             }
 
             /* Do an horizontal flip when you move the mouse over the flip box container */
-            .flip-card:hover .flip-card-inner {
+            .flip-card.active .flip-card-inner {
             transform: rotateY(180deg);
             }
 
@@ -207,6 +207,7 @@
             .flip-card-front {
             /*background-color: #bbb;
             color: black;*/
+            padding:20px;
             }
 
             /* Style the back side */
@@ -223,16 +224,14 @@
 
             .flip-card-front {
               border: 1px solid #f1f1f1;
-              padding-bottom: 100%;
-              background-color: beige;
+              /*padding-bottom: 100%*/
+              background-color: white;
             }
 
-            .flip-card-front img {
-              padding:20px;
-            }
+
             .flip-card-back {
               border: 1px solid #f1f1f1;
-              padding-bottom: 100%
+              /*padding-bottom: 100%*/
               background-color: white;
             }
 
@@ -251,13 +250,65 @@
               height:30px;
               margin-bottom: 8px;
             }
+
+            .flip-card-front, .flip-card-back {
+              height: 100%;
+            }
+
+            .flip-card-front .coupon-label {
+              padding:20px;
+              height: 100%;
+              width: 100%;
+              display: table;
+            }
+
+            .flip-card-front .coupon-label .text-label h2 {
+              color: white;
+              font-weight: 800;
+
+            }
+
+            .flip-card-front .coupon-label .text-label {
+              display: table-cell;
+              vertical-align: middle;
+            }
+
+            .flip-card {
+              margin-bottom: 20px;
+            }
           </style>
 
 
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="https://lh3.googleusercontent.com/proxy/M81vGxXjj4Abq2mfOqc6WSk2LY5M7Gg_VaKS_boyyq4moS1oiuhXTvoMDeQOKWCVhCagiSEjpC340xPcWro1ZmvXGbtrYRiTH8i7FiAAVi23TWUKjaWBFUEjPlCBVvRe3OB8GoAUeDk" alt="Deal Label">
+                <div class="coupon-label bg-danger rounded-circle">
+                  <div class="text-label">
+                    <h2>50%</h1>
+                    <h2>OFF</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <img src="https://www.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/core_market_full/generator/dist/generator/assets/images/websiteQRCode_noFrame.png" alt="QR Code">
+              </div>
+            </div>
+            <div class="flip-card-description">
+              <p class="card-text">50% off</p>
+              <img class="brand-logo" src="assets/affiliates/bestbuy.svg">
+            </div>
+          </div>
+
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="coupon-label bg-danger rounded-circle">
+                  <div class="text-label">
+                    <h2>50%</h1>
+                    <h2>OFF</h1>
+                  </div>
+                </div>
               </div>
               <div class="flip-card-back">
                 <img src="https://www.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/core_market_full/generator/dist/generator/assets/images/websiteQRCode_noFrame.png" alt="QR Code">
@@ -331,9 +382,15 @@
 
     <script type="text/javascript">
 
-      //$(document).ready(function() {
+      $(document).ready(function() {
 
-      //});
+
+        $(".flip-card").click(function() {
+          $('.flip-card').not(this).removeClass('active');
+          $(this).toggleClass("active");
+        });
+
+      });
 
 
       /*
