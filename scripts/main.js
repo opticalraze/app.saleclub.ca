@@ -53,7 +53,7 @@ $(document).ready(function() {
         category = key; // still need to check if category still exists in case if it would disapear but may just add a no sales available notice
       }
 
-      $("#categories-dropdown").append(`<li><a href="#categories" class="dropdown-item capitalize change-category" data-value="${key}">${key}</a></li>`);
+      $("#categories-dropdown").append(`<li><a href="/#categories" class="dropdown-item capitalize change-category" data-value="${key}">${key}</a></li>`);
 
       if (category == key){
 
