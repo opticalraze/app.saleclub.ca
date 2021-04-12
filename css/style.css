@@ -1,6 +1,6 @@
 /* standard styles */
 body {
-  overflow-y: hidden;
+  /*overflow-y: hidden;*/
   overflow-x: hidden!important;
 
   /* disable select */

@@ -51,6 +51,7 @@
 
 
     <!-- MORE -->
+
     <!--
 
 
@@ -113,6 +114,10 @@
 
     <div id="wrapper">
 
+    <!--<div class="splash" style="background-color:white;height:100vh;width:100vw;overflow:hidden;position:fixed;top:0;left:0;z-index:20;">
+      <img src="assets/logo.svg" alt="logo" class="animate__animated animate__pulse animate__faster animate__infinite" id="splash" style="width:100vmin;padding:20px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;">
+    </div>-->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger" id="topbar">
       <a class="navbar-brand" href="/">
         <img src="assets/logo-white.svg" alt="SaleClub.ca">
@@ -128,7 +133,7 @@
 
     <nav id="sidebar">
       <ul class="list-unstyled components">
-        <li>
+        <li class="active">
           <a href="home">Home</a>
         </li>
         <li>
@@ -137,8 +142,11 @@
 
           </ul>
         </li>
-        <li class="active">
+        <li>
           <a href="coupons">Coupons</a>
+        </li>
+        <li class="disabled">
+          <a href="#">Newsletter</a>
         </li>
         <li>
           <a href="#" id="show-about-popup">About</a>
@@ -149,198 +157,38 @@
 
     <div id="content">
 
-      <div class="" id="coupons">
-        <h1>Coupons</h1>
+      <h1>Deals of the Day</h1>
+      <hr>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators" id="dodIndicators">
+
+        </ol>
+        <div class="carousel-inner" id="dod">
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <br><br>
+
+      <div class="" id="categories">
+        <h1>Categories</h1>
         <hr>
         <select class="form-control" aria-label=".form-select-lg example" style="background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 98% 50%;">
-          <option>Best Buy</option>
+
         </select>
         <br>
 
-        <div class="category" id="coupon">
-
-
-          <style media="screen">
-            /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-            .flip-card {
-            background-color: transparent;
-            width: 100%;
-            /*padding-bottom: 100%;*/
-            /*padding-bottom: calc(100% + 106px);*/
-            border: 1px solid #f1f1f1;
-            perspective: 1000px; /* Remove this if you don't want the 3D effect */
-            }
-
-            /* This container is needed to position the front and back side */
-            .flip-card-inner {
-            position: relative;
-            width: 100%;
-            padding-bottom: 100%;
-            height: 100%;
-            /*height: 100%;*/
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-            }
-
-            /* Do an horizontal flip when you move the mouse over the flip box container */
-            .flip-card.active .flip-card-inner {
-            transform: rotateY(180deg);
-            }
-
-            /* Position the front and back side */
-            .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden; /* Safari */
-            backface-visibility: hidden;
-            }
-
-            /* Style the front side (fallback if image is missing) */
-            .flip-card-front {
-            /*background-color: #bbb;
-            color: black;*/
-            }
-
-            /* Style the back side */
-            .flip-card-back {
-            /*background-color: dodgerblue;
-            color: white;*/
-            transform: rotateY(180deg);
-            }
-
-
-            .flip-card img {
-              width: 100%;
-            }
-
-            .flip-card-front {
-              border: 1px solid #f1f1f1;
-              /*padding-bottom: 100%*/
-              background-color: white;
-            }
-
-
-            .flip-card-back {
-              border: 1px solid #f1f1f1;
-              /*padding-bottom: 100%*/
-              background-color: white;
-            }
-
-            .flip-card-description {
-              border: 1px solid #f1f1f1;
-            }
-
-            .flip-card-description p {
-              margin-top: 8px;
-              margin-bottom: 8px;
-              height: 72px;
-              overflow: hidden;
-            }
-
-            .flip-card-description img {
-              height:30px;
-              margin-bottom: 8px;
-            }
-
-            .flip-card-front, .flip-card-back {
-              height: 100%;
-              padding:20px;
-            }
-
-            .flip-card-front .coupon-label {
-              padding:20px;
-              height: 100%;
-              width: 100%;
-              display: table;
-            }
-
-            .flip-card-front .coupon-label .text-label h2 {
-              color: white;
-              font-weight: 800;
-              font-size: 2.5rem;
-              margin: 0;
-              text-transform: uppercase;
-            }
-
-            .flip-card-front .coupon-label .text-label {
-              display: table-cell;
-              vertical-align: middle;
-            }
-
-            .flip-card {
-              margin-bottom: 20px;
-            }
-
-            .flip-card-back .coupon-code {
-              /*padding:20px;*/
-              height: 100%;
-              width: 100%;
-            }
-          </style>
-
-
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <div class="coupon-label bg-danger">
-                  <div class="text-label">
-                    <h2>25%</h1>
-                    <h2>OFF</h1>
-                  </div>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="coupon-code bg-white">
-                  <!--<img src="https://www.unitag.io/images/generator/qr_code_1.png" alt="QR Code">-->
-                  <div id="qrcode"></div>
-                </div>
-              </div>
-            </div>
-            <div class="flip-card-description">
-              <p class="card-text">Save $25 on Your Order Using Staples Coupon</p>
-              <img class="brand-logo" src="assets/affiliates/staples.svg">
-            </div>
-          </div>
-
-
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <div class="coupon-label bg-danger rounded-circle">
-                  <div class="text-label">
-                    <h2>50%</h1>
-                    <h2>OFF</h1>
-                  </div>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <img src="https://www.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/core_market_full/generator/dist/generator/assets/images/websiteQRCode_noFrame.png" alt="QR Code">
-              </div>
-            </div>
-            <div class="flip-card-description">
-              <p class="card-text">50% off</p>
-              <img class="brand-logo" src="assets/affiliates/bestbuy.svg">
-            </div>
-          </div>
-
-
-
-          <!--<div class="card grow sale animate__animated animate__fadeIn">
-            <a class="text-dark" href="#" target="_blank">
-              <div class="card-img-top">
-                <div class="img" style="background-image:url('https://lh3.googleusercontent.com/proxy/M81vGxXjj4Abq2mfOqc6WSk2LY5M7Gg_VaKS_boyyq4moS1oiuhXTvoMDeQOKWCVhCagiSEjpC340xPcWro1ZmvXGbtrYRiTH8i7FiAAVi23TWUKjaWBFUEjPlCBVvRe3OB8GoAUeDk')"></div>
-              </div>
-              <div class="card-body">
-                <p class="card-text">50% off</p>
-              </div>
-            <img class="brand-logo" src="assets/affiliates/bestbuy.svg"></a>
-          </div>-->
-
-
+        <div class="category" id="category">
 
         </div>
+
       </div>
 
 
@@ -358,14 +206,45 @@
         <hr>
       </div>
       <div class="body">
+
         <img class="about-logo" src="assets/logo.svg" alt="logo">
+
         <p class="text-center"><i>We know you work hard for you money. Saving it shouldn't be. Find the best deals today at saleclub.ca</i></p>
+
         <p class="notice-contact"><b>Contact:</b> <u><a href="mailto: contact@saleclub.ca" class="text-dark">contact@saleclub.ca</a></u></p>
+
         <p><b>Note:</b> this site uses affiliate marketing to pay the bills <br><a class="text-dark" href="#" id="show-notice-popup"><u>Click Here</u></a> for more info.</p>
+
         <p class="notice-copyright">© Copyright 2021, <a href="https://opticalraze.com" class="text-dark">Optical Raze</a></p>
       </div>
       <span>
           <button id="close-about-popup" type="button" class="btn btn-light popup-close"><i class="fas fa-times"></i></button>
+      </span>
+    </div>
+
+    <div id="notice-popup" class="popup">
+      <div class="head">
+        <h3>Notice</h3>
+        <hr>
+      </div>
+      <div class="body">
+        <p>saleclub.ca uses affiliate programs to earn revenue when you click on deals from our page.</p>
+      </div>
+      <span>
+          <button id="close-notice-popup" type="button" class="btn btn-light popup-close"><i class="fas fa-times"></i></button>
+      </span>
+    </div>
+
+    <div id="contact-popup" class="popup">
+      <div class="head">
+        <h3>Contact</h3>
+        <hr>
+      </div>
+      <div class="body">
+        <p>If you would like to contact us, you can send us an email at: <a href="mailto:contact@saleclub.ca">contact@saleclub.ca</a></p>
+      </div>
+      <span>
+          <button id="close-contact-popup" type="button" class="btn btn-light popup-close"><i class="fas fa-times"></i></button>
       </span>
     </div>
 
@@ -387,15 +266,24 @@
 
     <script type="text/javascript">
 
-      $(document).ready(function() {
+    /*$(document).ready(function() {
 
 
-        $(".flip-card").click(function() {
-          $('.flip-card').not(this).removeClass('active');
-          $(this).toggleClass("active");
-        });
+      // splash functions
+      (function($){
 
-      });
+        'use strict';
+          $(window).on('load', function () {
+              if ($(".splash").length > 0)
+              {
+                $(".splash").fadeOut("slow");
+                $('body').css('overflow','auto');
+              }
+          });
+      })(jQuery)
+
+    });*/
+
 
 
       /*
@@ -430,18 +318,6 @@
       }
 
     </script>-->
-
-    <script type="text/javascript">
-    new QRCode(document.getElementById("qrcode"), {
-        text: "55712",
-        width: 200,
-        height: 200,
-        //colorDark : "#821E28",
-        colorDark : "#DC3545",
-        colorLight : "#FFFFFF",
-        correctLevel : QRCode.CorrectLevel.H
-    });
-    </script>
 
   </body>
 </html>
